@@ -40,15 +40,24 @@ const routes: Routes = [
             loadChildren: () => import('./offers/offer-bookings/offer-bookings.module').then(m => m.OfferBookingsPageModule)
           }
         ]
+      },
+      {
+        path: '',
+        redirectTo: '/places/tabs/discover',
+        pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: '/places/tabs/discover',
+    pathMatch: 'full'
   }
 ]
 
-
 @NgModule({
-  imports: [RouterModule.forChild()],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 
-export class PlacesRoutingModule {}
+export class PlacesPageRoutingModule {}
